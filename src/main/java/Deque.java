@@ -108,9 +108,7 @@ class LinkedList2<T> {
 
         while (node != null) {
             if (node.value == value) {
-                if (node == this.head) {
-                    deleteNode(node);
-                }
+                deleteNode(node);
                 return true;
             }
             node = node.next;
