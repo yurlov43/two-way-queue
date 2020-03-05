@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        String [] strings = {"казак", "шалаш", "малыш", "кабак"};
+        String [] strings = {"казак", "шалаш", "малыш", "кабак", "абба"};
         for (String str : strings) {
             Deque<Character> deque = new Deque<>();
             for (int i = 0; i < str.length(); i += 1) {
@@ -15,7 +15,14 @@ public class Main {
     }
 
     public static boolean isPalindrome(Deque deque) {
-        while(deque.size() != 1) {
+        while(deque.size() != 1 && deque.size() % 2 != 0) {
+            if (deque.removeTail().toString().equals(deque.removeFront().toString())) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        while(deque.size() != 0 && deque.size() % 2 == 0) {
             if (deque.removeTail().toString().equals(deque.removeFront().toString())) {
                 continue;
             } else {
