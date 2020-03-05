@@ -6,15 +6,15 @@ public class Main {
             for (int i = 0; i < str.length(); i += 1) {
                 deque.addFront(str.charAt(i));
             }
-            if (isPalidrome(deque)) {
-                System.out.println(String.format("%s\t- палидром", str));
+            if (isPalindrome(deque)) {
+                System.out.println(String.format("%s\t- палиндром", str));
             } else {
-                System.out.println(String.format("%s\t- не палидром", str));
+                System.out.println(String.format("%s\t- не палиндром", str));
             }
         }
     }
 
-    public static boolean isPalidrome(Deque deque) {
+    public static boolean isPalindrome(Deque deque) {
         while(deque.size() != 1) {
             if (deque.removeTail().toString().equals(deque.removeFront().toString())) {
                 continue;
